@@ -25,4 +25,4 @@ A simple VSCode project with everything needed for cross-platform ASM developmen
 - Runs Docker image for containerization and emulation
 
 ## For Ease Of Use, Use A Template Plugin
-- I personally use: ![cantonios - Project Templates](https://marketplace.visualstudio.com/items?itemName=cantonios.project-templates)
+- I personally use: [cantonios - Project Templates](https://marketplace.visualstudio.com/items?itemName=cantonios.project-templates)
