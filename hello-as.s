@@ -10,13 +10,6 @@ _start:
     mov rdx, 14
     syscall
 
-    // sys_write
-    mov rax, 1
-    mov rdi, 1
-    lea rsi, [love_asm]
-    mov rdx, 11
-    syscall
-
     // sys_exit
     mov rax, 60
     mov rdi, 0
@@ -24,6 +17,3 @@ _start:
 
 hello_world:
     .asciz "Hello, World!\n"
-
-love_asm:
-    .asciz "I <3 ASM!!\n"

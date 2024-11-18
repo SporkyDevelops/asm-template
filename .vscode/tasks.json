@@ -2,16 +2,47 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build and Run ASM",
+            "label": "Build and Run NASM",
             "type": "shell",
             "command": "make",
             "args": [
                 "run",
-                "TARGET=${fileBasenameNoExtension}"
+                "TARGET=${fileBasenameNoExtension}",
+                "ASM=nasm"
             ],
             "group": {
                 "kind": "build",
-                "isDefault": true
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "options": {
+                "shell": {
+                    "executable": "/bin/sh",
+                    "args": ["-c"]
+                },
+                "env": {
+                    "TARGET": "${fileBasenameNoExtension}"
+                }
+            }
+        },
+        {
+            "label": "Build and Run AS ASM",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "run",
+                "TARGET=${fileBasenameNoExtension}",
+                "ASM=as"
+            ],
+            "group": {
+                "kind": "build",
             },
             "problemMatcher": [],
             "presentation": {
