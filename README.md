@@ -22,5 +22,5 @@ A simple VSCode project with everything needed for cross-platform ASM developmen
 ## Usage
 - Command + Shift + B to run build task
 
-## For Ease Of Use, Use A Template Plugin
-- I personally use: [cantonios - Project Templates](https://marketplace.visualstudio.com/items?itemName=cantonios.project-templates)
+## For Ease Of Use
+- Use a template extension. I personally use: [cantonios - Project Templates](https://marketplace.visualstudio.com/items?itemName=cantonios.project-templates)
