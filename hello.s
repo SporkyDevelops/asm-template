@@ -13,17 +13,17 @@ _start:
     // sys_write
     mov rax, 1
     mov rdi, 1
-    lea rsi, [asm_sucks]
-    mov rdx, 13
+    lea rsi, [love_asm]
+    mov rdx, 11
     syscall
 
     // sys_exit
     mov rax, 60
-    mov rdi, 25
+    mov rdi, 0
     syscall
 
 hello_world:
     .asciz "Hello, World!\n"
 
-asm_sucks:
-    .asciz "ASM Sucks :c\n"
+love_asm:
+    .asciz "I <3 ASM!!\n"
