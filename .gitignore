@@ -1,0 +1,11 @@
+*.o
+*.a
+*.out
+*.tar
+*.img
+*.log
+docker-compose.yml
+.DS_Store
+Thumbs.db
+*.swp
+*~
