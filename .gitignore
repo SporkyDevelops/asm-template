@@ -1,3 +1,12 @@
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
 *.o
 *.a
 *.out
@@ -9,3 +18,5 @@ docker-compose.yml
 Thumbs.db
 *.swp
 *~
+
+# I don't know how to write gitignores :/ or really anything lol :P
