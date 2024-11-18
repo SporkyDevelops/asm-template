@@ -11,7 +11,7 @@ A simple VSCode project with everything needed for cross-platform ASM developmen
 ## Features
 - Cross-platform
 - Preconfigured for VSCode
-- Ready-to-use Docker
+- Ready-to-use Dockerfile
 - x84_64 / AMD64
 
 ## Installation
