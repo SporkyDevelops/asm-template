@@ -9,16 +9,18 @@ ifeq ($(ASM),nasm)
     ASM_FLAGS = -f elf64
 endif
 
+BUILD_DIR = output
+
 # Default target
 all: build
 
 # Build the assembly program
-build:
+build: $(BUILD_DIR)
 	@if [ -z "$(TARGET)" ]; then \
 		echo "Usage: make build TARGET=<filename_without_extension>"; \
 		exit 1; \
 	fi; \
-	BUILD_OUTPUT=$$($(DOCKER_RUN) bash -c "$(ASM) $(ASM_FLAGS) $(TARGET).s -o $(TARGET).o; gcc -o $(TARGET) $(TARGET).o -nostdlib -static 2>&1"); \
+	BUILD_OUTPUT=$$($(DOCKER_RUN) bash -c "$(ASM) $(ASM_FLAGS) $(TARGET).s -o $(BUILD_DIR)/$(TARGET).o; gcc -o $(BUILD_DIR)/$(TARGET) $(BUILD_DIR)/$(TARGET).o -nostdlib -static 2>&1"); \
 	if [ $$? -ne 0 ]; then \
 		echo "$$BUILD_OUTPUT" > /dev/null; \
 		if [ "$(SHOW_ERROR)" = "1" ]; then echo "Build failed with error code: $$?"; fi; \
@@ -31,6 +33,6 @@ run: build
 		echo "Usage: make run TARGET=<filename_without_extension>"; \
 		exit 1; \
 	fi; \
-	$(DOCKER_RUN) bash -c "./$(TARGET)"
+	$(DOCKER_RUN) bash -c "./$(BUILD_DIR)/$(TARGET)"
 
 .PHONY: all build run
