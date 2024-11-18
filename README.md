@@ -20,6 +20,8 @@ A simple VSCode project with everything needed for cross-platform ASM developmen
 4. Start coding in assembly!
 
 ## Usage
-- Use VSCode with extensions for Make, Docker, and Sytnax highlighting
+- Use VSCode with extensions for Make, Docker, and Syntax highlighting
 - Build with VSCode task and Make
 - Runs Docker image for containerization and emulation
+
+## For 
