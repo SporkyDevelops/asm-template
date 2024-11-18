@@ -1,4 +1,4 @@
-# asm-template
+# ASM VSCode Template
 
 A simple VSCode project with everything needed for cross-platform ASM development. I made this as I'm on macOS and wanted an effective way to practice amd64 ASM.
 
