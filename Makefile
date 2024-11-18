@@ -10,6 +10,7 @@ ifeq ($(ASM),nasm)
 endif
 
 BUILD_DIR = output
+FILE_DIR = src
 
 # Default target
 all: build
@@ -20,7 +21,7 @@ build: $(BUILD_DIR)
 		echo "Usage: make build TARGET=<filename_without_extension>"; \
 		exit 1; \
 	fi; \
-	BUILD_OUTPUT=$$($(DOCKER_RUN) bash -c "$(ASM) $(ASM_FLAGS) $(TARGET).s -o $(BUILD_DIR)/$(TARGET).o; gcc -o $(BUILD_DIR)/$(TARGET) $(BUILD_DIR)/$(TARGET).o -nostdlib -static 2>&1"); \
+	BUILD_OUTPUT=$$($(DOCKER_RUN) bash -c "$(ASM) $(ASM_FLAGS) $(FILE_DIR)/$(TARGET).s -o $(BUILD_DIR)/$(TARGET).o; gcc -o $(BUILD_DIR)/$(TARGET) $(BUILD_DIR)/$(TARGET).o -nostdlib -static 2>&1"); \
 	if [ $$? -ne 0 ]; then \
 		echo "$$BUILD_OUTPUT" > /dev/null; \
 		if [ "$(SHOW_ERROR)" = "1" ]; then echo "Build failed with error code: $$?"; fi; \
